@@ -35,6 +35,7 @@ async function onSubmit(evt){
         return
     }
     apiSearch.query = searchString;
+    apiSearch.resetPage()
     const images = await apiSearch.fetchImages()
     if (images.hits.length === 0) {
         Notify.failure("Sorry, there are no images matching your search query. Please try again.");
